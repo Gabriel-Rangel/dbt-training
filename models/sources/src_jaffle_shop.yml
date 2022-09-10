@@ -3,7 +3,8 @@ version: 2
 sources:
   - name: jaffle_shop
     description: A clone of a Postgres application database
-    database: dbt_prod
+    #database: dbt_prod
+    database: dbt_dev
     schema: jaffle_shop
     tables:
       - name: jaffle_shop_customers

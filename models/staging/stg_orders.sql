@@ -6,3 +6,7 @@ select
     status
 
 from {{ source('jaffle_shop', 'jaffle_shop_orders') }}
+
+{% if target.name == 'dev' %}
+    --where to_date(order_date, 'YYYY-MM-DD')>= current_date - interval '10000' day
+{% endif %}
